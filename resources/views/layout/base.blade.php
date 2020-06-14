@@ -10,7 +10,8 @@
 	 
   <link rel="stylesheet" href="{{ url('public/css/main.css') }}">
 
-	<script type="text/javascript" src="{{ url('public/js/jquery-1.7.2.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('public/js/jquery-1.7.2.min.js') }}"></script> 
+	 
 	<script type="text/javascript" src="{{ url('public/js/main.js') }}"></script>
 </head>
  
@@ -159,54 +160,6 @@
 		</div>
 		<div class="clear"></div>
 	</div>
-		
-	<!-- {literal} -->
-	<script type='text/javascript'>
-	window['l'+'i'+'veT'+'ex'] = true,
-	window['l'+'iveT'+'e'+'x'+'ID'] = 118912,
-	window['liveT'+'ex_o'+'bject'] = true;
-	(function() {
-	var t = document['create'+'El'+'eme'+'nt']('script');
-	t.type ='text/javascript';
-	t.async = true;
-	t.src = '//cs1'+'5.l'+'ivet'+'ex.r'+'u/'+'js'+'/client.j'+'s';
-	var c = document['getEleme'+'ntsByT'+'agNa'+'me']('script')[0];
-	if ( c ) c['par'+'entNo'+'d'+'e']['in'+'sertBe'+'fore'](t, c);
-	else document['d'+'o'+'cumen'+'tEleme'+'nt']['f'+'irstC'+'hi'+'ld']['a'+'pp'+'end'+'Chil'+'d'](t);
-	})();
-	</script>
-	<!-- {/literal} —>
- 
-	<style type='text/css'>@font-face{font-family:'open_sansregular';src:url('apps/crimeacr/fonts/OpenSans-Regular-webfont.eot');src:url('apps/crimeacr/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('apps/crimeacr/fonts/OpenSans-Regular-webfont.woff') format('woff'),url('apps/crimeacr/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),url('apps/crimeacr/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'open_sanssemibold';src:url('apps/crimeacr/fonts/OpenSans-Semibold-webfont.eot');src:url('apps/crimeacr/fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),url('apps/crimeacr/fonts/OpenSans-Semibold-webfont.woff') format('woff'),url('apps/crimeacr/fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),url('apps/crimeacr/fonts/OpenSans-Semibold-webfont.svg#open_sansregular') format('svg');font-weight:normal;font-style:normal}</style>
-	<!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");ym(30398272, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/30398272" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
-
-	<!-- Rating@Mail.ru counter -->
-	<script type="text/javascript">
-	var _tmr = _tmr || [];
-	_tmr.push({id: "2645205", type: "pageView", start: (new Date()).getTime()});
-	(function (d, w) {
-	 var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
-	 ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
-	 var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-	 if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-	})(document, window);
-	</script><noscript><div style="position:absolute;left:-10000px;">
-	<img src="//top-fwz1.mail.ru/counter?id=2645205;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
-	</div></noscript>
-	<!-- //Rating@Mail.ru counter -->
-
-	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-64862473-1','auto');ga('send','pageview');</script>
-
-	<!-- BEGIN JIVOSITE CODE {literal} -->
-	<script type='text/javascript'>
-	(function(){ var widget_id = 'GTVq8rALQF';var d=document;var w=window;function l(){
-	var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-	s.src = '//code.jivosite.com/script/widget/'+widget_id
-		; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
-	if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
-	else{w.addEventListener('load',l,false);}}})();
-	</script>
-	<!-- {/literal} END JIVOSITE CODE -->
 	
 </body>
 
