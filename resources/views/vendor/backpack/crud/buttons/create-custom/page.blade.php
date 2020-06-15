@@ -1,0 +1,1 @@
+@include('vendor.backpack.crud.buttons.create-custom._base', ['text' => 'Новая страница'])

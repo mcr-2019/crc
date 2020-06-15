@@ -63,12 +63,7 @@
 					</a>
 				</div>
 			</div>
-		
-			<div class="language-switcher">
-				<a href="{{ url('/') }}" class="current">Рус</a>
-				<a href="{{ url('/en/') }}">Eng</a>
-			</div>
-			 
+		 
 			@if (isset($page))
 				@if ($page == 'child')
 					<div class="menu">

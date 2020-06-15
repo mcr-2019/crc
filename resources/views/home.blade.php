@@ -10,8 +10,47 @@
 	            <div class="side right">
 	                <div class="left"><a class="offer-anons" href="/service/?idnews=464"><span class="preview preview-main" style="display: block;"><span class="price-bar" style="display: block;">от 1500 р./час</span><img src="/resize/?idnews=292&amp;v=crimeacrv161287094&amp;ratio=1&amp;width=225&ratio=0" alt="1 Автопарк Crimea Rent-a-Car" class="image_big"/></span><span class="preview preview-additional" style="display: block;"><img src="/resize/?idnews=294&amp;v=crimeacrv160849668&amp;ratio=1&amp;width=112&ratio=0" alt="Автопарк Crimea Rent-a-Car" class="image_small left"/><img src="/resize/?idnews=295&amp;v=crimeacrv160852876&amp;ratio=1&amp;width=112&ratio=0" alt="Автопарк Crimea Rent-a-Car" class="image_small right"/></span></a><div class="offer-anons--title-bar a-alt"><a href="/service/?idnews=464">Toyota Land Cruiser Prado</a></div></div><div class="right"><a class="offer-anons" href="/service/?idnews=68"><span class="preview preview-main" style="display: block;"><span class="price-bar" style="display: block;">от 1200 р./час</span><img src="/resize/?idnews=226&amp;v=crimeacrv148184156&amp;ratio=1&amp;width=225&ratio=0" alt="1 Автопарк Crimea Rent-a-Car" class="image_big"/></span><span class="preview preview-additional" style="display: block;"><img src="/resize/?idnews=228&amp;v=crimeacrv161040113&amp;ratio=1&amp;width=112&ratio=0" alt="Автопарк Crimea Rent-a-Car" class="image_small left"/><img src="/resize/?idnews=229&amp;v=crimeacrv161040113&amp;ratio=1&amp;width=112&ratio=0" alt="Автопарк Crimea Rent-a-Car" class="image_small right"/></span></a><div class="offer-anons--title-bar a-alt"><a href="/service/?idnews=68">Ford Galaxy</a></div></div>            </div>
 	        </div>
-
-	        <div class="news-anons-wrap"><div class="news-anons left"><span class="news-date">20 марта</span><a class="news-title" href="/news/?idnews=529">Весенние каникулы с детьми в Крыму</a><div>Отдых в Крыму весной – замечательный подарок, особенно для школьников, живущих в регионах, где климат не слишком ласковый и зимой достаточно холодно. Кром...</div></div><div class="news-anons right"><span class="news-date">19 сентября</span><a class="news-title" href="/news/?idnews=528">Круизы между Сочи и Крымом планируют запустить уже в апреле 2017 года</a><div>Развивается проект круизного сообщения между портами Новороссийска, Севастополя и Ялты. Предложенная продолжительность - неделя.</div></div><div class="clear">&nbsp;</div><a class="all-news" href="/news/">Все новости</a></div>        <h1 style="margin: 0px 0px 13px; padding: 0px; border: 0px; font-family: open_sanssemibold, Arial; font-size: 23px; font-weight: inherit; font-stretch: inherit; line-height: 36px; vertical-align: baseline; color: rgb(0, 0, 0); text-align: center;">Нужна аренда авто в Крыму? Добро пожаловать в &laquo;Crimea Rent-a-Car&raquo;!</h1>
+					
+					@if (count($news) > 0)
+						@php
+							$firstNewsItem = $news->first();
+							$secondNewsItem = $news->get(2);
+						@endphp
+		        <div class="news-anons-wrap"> 
+							<div class="news-anons left">
+								@if (!is_null($firstNewsItem->created_at))
+									<span class="news-date">
+										{{ $firstNewsItem->created_at->format('d') }}/{{ $firstNewsItem->created_at->format('m') }}/{{ $firstNewsItem->created_at->format('Y') }}
+									</span>
+								@endif
+								<a class="news-title" href="{{ route('news.item', [ $firstNewsItem->id]) }}/">
+									{{ $firstNewsItem->title }}
+								</a>
+								<div>
+									{{ $firstNewsItem->teaser }}
+								</div>
+							</div>
+							@if (!is_null($secondNewsItem))
+								<div class="news-anons right">
+									@if (!is_null($secondNewsItem->created_at))
+										<span class="news-date">
+											{{ $secondNewsItem->created_at->format('d') }}/{{ $secondNewsItem->created_at->format('m') }}/{{ $secondNewsItem->created_at->format('Y') }}
+										</span>
+									@endif
+									<a class="news-title" href="{{ route('news.item', [ $secondNewsItem->id]) }}/">
+										{{ $secondNewsItem->title }}
+									</a>
+									<div>
+										{{ $secondNewsItem->teaser }}
+									</div>
+								</div>
+							@endif
+							<div class="clear">&nbsp;</div>
+							<a class="all-news" href="{{ url('/news') }}/">Все новости</a>
+						</div>
+					@endif
+					
+					<h1 style="margin: 0px 0px 13px; padding: 0px; border: 0px; font-family: open_sanssemibold, Arial; font-size: 23px; font-weight: inherit; font-stretch: inherit; line-height: 36px; vertical-align: baseline; color: rgb(0, 0, 0); text-align: center;">Нужна аренда авто в Крыму? Добро пожаловать в &laquo;Crimea Rent-a-Car&raquo;!</h1>
 	<p style="margin: 0px 0px 28px; padding: 0px; border: 0px; font-family: open_sansregular, Arial; font-size: 14px; font-stretch: inherit; line-height: 22px; vertical-align: baseline; color: rgb(0, 0, 0);">Вы приехали в Крым отдохнуть? Или же посетили наш прекрасный полуостров по работе? Не хотите все время пребывания провести в длительных поездках в неудобном и медленном общественном транспорте? Тогда&nbsp;<strong><span style="margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline;">аренда авто в Крыму</span></strong>&nbsp;&laquo;Crimea Rent-a-Car&raquo; - это именно то, что вам нужно.</p>
 	<p style="margin: 0px 0px 28px; padding: 0px; border: 0px; font-family: open_sansregular, Arial; font-size: 14px; font-stretch: inherit; line-height: 22px; vertical-align: baseline; color: rgb(0, 0, 0);">Высококлассный сервис, комплексное обслуживание, современные стильные автомобили на любой вкус и просто удобный прокат авто в Крыму &ndash; все это вы в любой момент можете получить, если обратитесь к нам. И мы действительно предоставляем сервис европейского уровня.</p>
 	<p style="margin: 0px 0px 28px; padding: 0px; border: 0px; font-family: open_sansregular, Arial; font-size: 14px; font-stretch: inherit; line-height: 22px; vertical-align: baseline; color: rgb(0, 0, 0);">Все это не пустые слова! За время своей деятельности наша компания была задействована в проведении свыше сотни различных мероприятий. Нашими услугами пользовались певцы, актеры, политики, массовые деятели, транспортные компании и, конечно же, тысячи простых гостей и жителей Крыма.</p>

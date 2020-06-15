@@ -11,6 +11,20 @@
 |
 */
 
+use App\Models\Permission;
+
+Route::group([
+    'prefix' => 'admin-panel',
+    'namespace' => 'Admin',
+    'middleware' => 'admin'
+], function () {
+    Route::get('/', 'AdminController@redirect');
+
+    Route::group(['middleware' => 'hasPermission:'.Permission::PERMISSION_NEWS], function () {
+        CRUD::resource('news', 'NewsCrudController');
+    });
+});
+
 Route::get('/', 'HomeController@index');
 
 Route::get('/payment', function () { return view('payment'); });
@@ -26,6 +40,9 @@ Route::get('/contacts', function () { return view('contacts'); });
 Route::get('/terms', function () { return view('terms'); });
 
 Route::get('/more', function () { return view('more'); });
+
+Route::get('/news', 'NewsController@showNews');
+Route::get('/news/{news_id}', 'NewsController@showNewsItem')->name('news.item');
 
 Route::get('/booking', function () { return view('booking'); });
 

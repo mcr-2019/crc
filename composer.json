@@ -6,6 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "backpack/base": "^0.7.19",
+        "backpack/crud": "^3.2",
+        "backpack/menucrud": "^1.0",
+        "backpack/permissionmanager": "^2.1",
+        "backpack/settings": "^2.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"

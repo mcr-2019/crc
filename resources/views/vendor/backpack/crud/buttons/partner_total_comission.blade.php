@@ -1,0 +1,1 @@
+<b>Доступно к выводу:</b> <span id="total_partner_comission_container"></span> {{ $currencyAbbr }}

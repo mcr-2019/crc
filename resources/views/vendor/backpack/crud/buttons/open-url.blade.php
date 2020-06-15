@@ -1,0 +1,1 @@
+<a target="_blank" href="{{ $entry->getUrl() }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Открыть</a>
