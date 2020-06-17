@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  * @property int $id
- * @property int $branch_office_id
  * @property string $title
  * @property string $content
  * @property string $teaser
@@ -24,25 +23,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $seo_description
  * @property string $seo_keywords
  * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereContent($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereImage($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereIsEnabled($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereSeoDescription($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereSeoKeywords($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereSeoTitle($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereSlug($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereTeaser($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereTitle($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereUpdatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News findSimilarSlugs(\Illuminate\Database\Eloquent\Model $model, $attribute, $config, $slug)
- * @property string $teaser2
- * @method static \Illuminate\Database\Query\Builder|\App\Models\News whereTeaser2($value)
- *
- * @property Source[]|Collection sources
- * @see News::sources()
  */
 class News extends Model
 {

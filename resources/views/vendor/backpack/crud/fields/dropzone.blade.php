@@ -1,12 +1,12 @@
 <!-- browse server input -->
 <?php
-  if (isset($entry) && $entry instanceof \App\Models\Vehicle) {
-      $field['value'] = $entry->photos->filter(function (\App\Models\Photo $photo) {
-          return is_null($photo->parent_id);
-      })->sortBy('id')->map(function (\App\Models\Photo $photo) {
+  if (isset($entry) && $entry instanceof \App\Models\Car) {
+      $field['value'] = $entry->images->filter(function (\App\Models\Image $image) {
+          return is_null($image->parent_id);
+      })->sortBy('id')->map(function (\App\Models\Image $image) {
           return [
-              'id' => $photo->getKey(),
-              'path' => url('/uploads/' . $photo->image)
+              'id' => $image->getKey(),
+              'path' => url($image->path)
           ];
       })->values()->toArray();
   }
@@ -164,7 +164,7 @@
                     var $this = $(this);
                     $.ajax({
                         type: "POST",
-                        url: "/{{config('backpack.base.route_prefix', 'admin')}}/vehicle/delete/image",
+                        url: "/{{config('backpack.base.route_prefix', 'admin')}}/car/delete/image",
                         data: {id: imgObj.id},
                         success: function () {
                             $this.closest('.browse-photos__item').remove();
@@ -179,7 +179,7 @@
         }
         renderContainer();
         $("#dropzone").upload({
-            action: "/{{config('backpack.base.route_prefix', 'admin')}}/vehicle/upload",
+            action: "/{{config('backpack.base.route_prefix', 'admin')}}/car/upload",
             label: "Перетащите файлы сюда либо нажмите",
             dataType: 'json',
             postData: {

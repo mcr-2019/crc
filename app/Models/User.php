@@ -11,7 +11,6 @@ use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNo
 /**
  * App\User
  *
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @mixin \Eloquent
  * @property int $id
  * @property string $name
@@ -22,13 +21,6 @@ use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNo
  * @property string $bank_details
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereEmail($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User wherePassword($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRememberToken($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUpdatedAt($value)
  *
  * @property BranchOffice[]|Collection branchOffices
  * @see User::branchOffices()

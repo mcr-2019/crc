@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\News;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -17,9 +18,22 @@ class HomeController extends Controller
     $news = News::where('is_enabled', true)
       ->orderBy('created_at', 'desc')
       ->get();
+    
+    $carsWithDriver = Car::where('with_driver', true)
+      ->get()
+      ->random(2); 
+    
+    $carsWithoutDriver = Car::where(function($query) {
+        $query->where('with_driver', false)
+          ->orWhereNull('with_driver');
+      })
+      ->get()
+      ->random(2); 
        
     return view('home', [
-      'news' => $news
+      'news' => $news,
+      'carsWithDriver' => $carsWithDriver,
+      'carsWithoutDriver' => $carsWithoutDriver
     ]);  
   }
 }

@@ -21,7 +21,8 @@
                 @endif
 
                 @if(Auth::user()->hasPermissionTo(\App\Models\Permission::PERMISSION_CARS))
-                    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cars') }}"><i class="fa fa-money"></i> <span>Машины без водителя</span></a></li>
+                    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cars_with_driver') }}"><i class="fa fa-car"></i> <span>Машины с водителем</span></a></li>
+                    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cars_without_driver') }}"><i class="fa fa-car"></i> <span>Машины без водителя</span></a></li>
                 @endif
 
                 <li class="header">Пользователь</li>

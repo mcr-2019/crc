@@ -9,5 +9,5 @@ abstract class CrudController extends \Backpack\CRUD\app\Http\Controllers\CrudCo
     parent::__construct();
     
     $this->crud->setDefaultPageLength(100);
-  }
+  }  
 }

@@ -8,11 +8,20 @@
 	<link rel="icon" href="{{ url('public/crimeacr_favicon.ico') }}" type="image/x-icon"/>
 	<link rel="shortcut icon" href="{{ url('public/crimeacr_favicon.ico') }}" type="image/x-icon"/>
 	 
+	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap&amp;subset=cyrillic" media="all">
+	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&amp;display=swap&amp;subset=cyrillic" media="all">
+	 
   <link rel="stylesheet" href="{{ url('public/css/main.css') }}">
 
-	<script type="text/javascript" src="{{ url('public/js/jquery-1.7.2.min.js') }}"></script> 
+	@if (!isset($removeJquery) || !$removeJquery)
+		<script type="text/javascript" src="{{ url('public/js/jquery-1.7.2.min.js') }}"></script> 
+ 		<script type="text/javascript" src="{{ url('public/js/main.js') }}"></script>
+	@else
+  <link rel="stylesheet" href="{{ url('public/css/bootstrap-4.4.1.min.css') }}">
+  <link rel="stylesheet" href="{{ url('public/css/fonts.css') }}">
+  <link rel="stylesheet" href="{{ url('public/css/bootstrap-custom.css') }}">
+	@endif
 	 
-	<script type="text/javascript" src="{{ url('public/js/main.js') }}"></script>
 </head>
  
 <body
@@ -55,10 +64,10 @@
 				</a>
 				
 				<div class="phone last">
-					<a href="javascript:void(0)" class="callback-btn header-btn" id="callback-btn">
+					<a href="javascript:void(0)" class="callback-btn header-btn" id="callback-btn" style="box-sizing: unset;">
 						Заказать звонок
 					</a>
-					<a href="{{ url('/payment/') }}/"class="wallet-btn header-btn">
+					<a href="{{ url('/payment/') }}/"class="wallet-btn header-btn" style="box-sizing: unset;">
 						Онлайн оплата
 					</a>
 				</div>
@@ -92,7 +101,7 @@
 	@yield('content')
 	 
 	<div class="footer-top-bg">
-		<div class="footer-top">
+		<div class="footer-top"  style="font-size:14px;">
 			<div class="copyright">
 				© «<a href="{{ url('/') }}">Crimea Rent-a-Car</a>» — транспортная компания, 2017
 			</div>

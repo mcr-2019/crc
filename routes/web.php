@@ -23,6 +23,14 @@ Route::group([
     Route::group(['middleware' => 'hasPermission:'.Permission::PERMISSION_NEWS], function () {
         CRUD::resource('news', 'NewsCrudController');
     });
+
+    Route::group(['middleware' => 'hasPermission:'.Permission::PERMISSION_CARS], function () {
+        CRUD::resource('cars_with_driver', 'CarsWithDriverCrudController');
+        CRUD::resource('cars_without_driver', 'CarsWithoutDriverCrudController');
+    });
+     
+    Route::post('/car/upload', 'CarsWithDriverCrudController@upload');
+    Route::post('/car/delete/image', 'CarsWithDriverCrudController@deleteImage');
 });
 
 Route::get('/', 'HomeController@index');
@@ -45,6 +53,9 @@ Route::get('/news', 'NewsController@showNews');
 Route::get('/news/{news_id}', 'NewsController@showNewsItem')->name('news.item');
 
 Route::get('/booking', function () { return view('booking'); });
-
+Route::get('/service', 'CarsController@service');
+Route::get('/service/{car_id}', 'CarsController@getCarWithDriver');
+Route::get('/rent', 'CarsController@rent');
+Route::get('/rent/{car_id}', 'CarsController@getCarWithoutDriver');
 
 
